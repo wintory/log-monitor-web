@@ -1,5 +1,5 @@
 import './App.css'
-import FileUploader from './components/FileUpload'
+import FileUpload from './components/FileUpload'
 import LogDetail from './components/LogDetail'
 import useFileUpload from './hooks/useFileUpload'
 import useLogProcessing from './hooks/useLogProcessing'
@@ -14,10 +14,7 @@ const App = () => {
 
       <div className="p-4 w-full flex-col">
         <div>
-          <FileUploader
-            handleFileChange={handleFileChange}
-            fileName={fileName}
-          />
+          <FileUpload handleFileChange={handleFileChange} fileName={fileName} />
         </div>
         {results && (
           <>

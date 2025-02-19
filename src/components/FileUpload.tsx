@@ -1,11 +1,11 @@
 import { memo } from 'react'
 
-interface FileUploaderProps {
+interface FileUploadProps {
   handleFileChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   fileName: string
 }
 
-const FileUploader: React.FC<FileUploaderProps> = ({
+const FileUpload: React.FC<FileUploadProps> = ({
   handleFileChange,
   fileName,
 }) => {
@@ -26,4 +26,4 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   )
 }
 
-export default memo(FileUploader)
+export default memo(FileUpload)
