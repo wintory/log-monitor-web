@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* To support tailwind version 4 (still beta version in development date) */
+@plugin "daisyui";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
