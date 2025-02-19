@@ -2,6 +2,8 @@
 
 A web-based **log monitoring** that reads a log file, calculates job durations, and generates warnings/errors based on processing time.
 
+![screenshot](screenshots/screenshot.png)
+
 ## **Dependencies**
 
 - **[React](https://react.dev/)** - Frontend framework
