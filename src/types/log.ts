@@ -1,8 +1,13 @@
-export interface LogData {
-  pid: number
+import { LogType } from '../constants/log'
+
+export type LogData = {
+  pid: string
+  index: number
   description: string
-  startTime: string
-  endTime: string
-  duration: number
-  status: string
+  start?: number
+  startTime?: string
+  end?: number
+  endTime?: string
+  duration?: number
+  status: LogType
 }

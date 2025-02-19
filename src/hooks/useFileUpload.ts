@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 interface UseFileUploadProps {
   onload: (result: string | ArrayBuffer) => void
@@ -7,7 +7,7 @@ interface UseFileUploadProps {
 const useFileUpload = ({ onload }: UseFileUploadProps) => {
   const [fileName, setFileName] = useState('')
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
 
     if (file) {

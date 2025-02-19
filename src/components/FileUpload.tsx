@@ -12,7 +12,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   return (
     <div className="w-full inline-flex items-center gap-4">
       <label htmlFor="file-upload" className="btn btn-primary rounded p-2">
-        Upload Log File
+        Upload File
       </label>
       <input
         className="hidden"
