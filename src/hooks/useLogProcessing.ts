@@ -9,7 +9,7 @@ const useLogProcessing = () => {
     const logs = typeof logData === 'string' ? logData.trim().split('\n') : []
     const result = transformLogData(logs) as LogData[]
 
-    return result.sort((a, b) => a.index - b.index) // sort by input index
+    return (result || []).sort((a, b) => a.index - b.index) // sort by input index
   }, [logData])
 
   return { results, setLogData }
