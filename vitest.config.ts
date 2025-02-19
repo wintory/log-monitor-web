@@ -2,6 +2,8 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    files: '**/*.test.tsx',
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/tests/setupTest.ts'],
   },
 })
