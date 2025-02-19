@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# Log Monitoring Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based **log monitoring** that reads a log file, calculates job durations, and generates warnings/errors based on processing time.
 
-Currently, two official plugins are available:
+## **Dependencies**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **[React](https://react.dev/)** - Frontend framework
+- **[Vite.js](https://vitejs.dev/)** - Fast build tool for modern frontend projects
+- **[tailwindcss](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[daisyui](https://daisyui.com/)** - TailwindCSS component library
+- **[classnames](https://www.npmjs.com/package/classnames)** - Utility for conditionally joining classNames
+- **[date-fns](https://date-fns.org/)** - For time parsing and calculations
+- **[eslint](https://eslint.org/)** - JavaScript linter for code quality
+- **[prettier](https://prettier.io/)** - Code formatter for consistent styling
+- **[vitest](https://vitest.dev/)** - Unit testing framework for Vite
+- **[testing-library](https://testing-library.com/)** - Testing library for DOM manipulation
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## **Installation**
 
-- Configure the top-level `parserOptions` property like this:
+#### Pre-install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **[node.js](https://nodejs.org/en/download)**
+- **[yarn](https://classic.yarnpkg.com/lang/en/docs/install)**
+
+#### 1. Clone the repository
+
+```sh
+git clone https://github.com/wintory/log-monitor-web.git
+cd log-monitor
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+#### 2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+yarn install
 ```
+
+#### 3. Start the development server
+
+```sh
+yarn dev
+```
+
+Vite will start the server and provide a local development URL.
+
+---
+
+### How to Use
+
+- Click on the "Upload file" button.
+- Upload .log file (CSV format). (Example in example folder)
+- The results will be displayed in a table with:
+  - Warnings (for jobs exceeding 5 minutes).
+  - Errors (for jobs exceeding 10 minutes).
+  - Completed
+  - Incomplete (wrong input)
+
+---
+
+### Future Enhancements
+
+- Support for different log formats
+- Download reports
